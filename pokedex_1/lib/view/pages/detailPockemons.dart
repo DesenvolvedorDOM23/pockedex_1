@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex_1/pages/listPockemons.dart';
-import '../model/class_Pockemons.dart';
+import '../../presenter/entities/pockemonsEntity.dart';
 import 'dart:convert';
 
 class DetailPockemons extends StatefulWidget {
@@ -13,7 +12,8 @@ class DetailPockemons extends StatefulWidget {
 class _DetailPockemonsState extends State<DetailPockemons> {
   @override
   Widget build(BuildContext context) {
-    Data pokemon = ModalRoute.of(context)?.settings.arguments as Data;
+    PokemonEntity pokemon =
+        ModalRoute.of(context)?.settings.arguments as PokemonEntity;
 
     return Scaffold(
         appBar: AppBar(
@@ -28,7 +28,6 @@ class _DetailPockemonsState extends State<DetailPockemons> {
 
   _widigetPokemon(pokemons) {
     return Card(
-      margin: EdgeInsets.all(8.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
